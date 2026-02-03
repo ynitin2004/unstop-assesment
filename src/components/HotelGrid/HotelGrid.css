@@ -1,0 +1,48 @@
+/**
+ * Hotel grid container styles
+ */
+
+.hotel-grid {
+  background-color: #f8fafc;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hotel-header h2 {
+  margin: 0 0 4px 0;
+  color: #1e293b;
+  font-size: 20px;
+}
+
+.hotel-subtitle {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.hotel-floors {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hotel-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+  text-align: left;
+  padding-left: 52px;
+}
+
+.entrance-label {
+  color: #64748b;
+  font-size: 12px;
+  font-style: italic;
+}

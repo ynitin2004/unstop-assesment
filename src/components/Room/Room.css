@@ -1,0 +1,62 @@
+/**
+ * Room component styles
+ * Color coding for different room states
+ */
+
+.room {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: default;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.room:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.room-number {
+  user-select: none;
+}
+
+/* Available rooms - green */
+.room-available {
+  background-color: #4ade80;
+  color: #166534;
+}
+
+/* Booked rooms - blue */
+.room-booked {
+  background-color: #60a5fa;
+  color: #1e40af;
+}
+
+/* Last booked rooms - highlighted yellow */
+.room-last-booked {
+  background-color: #facc15;
+  color: #854d0e;
+  border: 2px solid #ca8a04;
+  animation: pulse 1.5s infinite;
+}
+
+/* Randomly occupied rooms - red/coral */
+.room-occupied {
+  background-color: #f87171;
+  color: #991b1b;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(250, 204, 21, 0);
+  }
+}

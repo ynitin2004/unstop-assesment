@@ -1,0 +1,1 @@
+export { HotelGrid } from './HotelGrid';

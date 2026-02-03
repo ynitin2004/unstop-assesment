@@ -1,0 +1,96 @@
+/**
+ * Booking controls styles
+ */
+
+.booking-controls {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-label {
+  display: block;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.room-input {
+  width: 80px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  text-align: center;
+  transition: border-color 0.15s ease;
+}
+
+.room-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.room-input::-webkit-inner-spin-button,
+.room-input::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.input-hint {
+  margin-left: 12px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.btn-secondary {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #d97706;
+}
+
+.btn-danger {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #dc2626;
+}

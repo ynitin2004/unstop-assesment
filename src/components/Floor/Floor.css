@@ -1,0 +1,27 @@
+/**
+ * Floor component styles
+ */
+
+.floor {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.floor-label {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.floor-number {
+  font-weight: 600;
+  color: #475569;
+  font-size: 14px;
+}
+
+.floor-rooms {
+  display: flex;
+  gap: 6px;
+}
