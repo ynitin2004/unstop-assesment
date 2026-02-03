@@ -49,7 +49,7 @@ export function useHotelReservation(): UseHotelReservationReturn {
       setLastAllocation(result);
       setMessage({
         type: 'success',
-        text: `Successfully booked ${result.allocatedRooms.length} room(s): ${result.allocatedRooms.join(', ')}. Travel time: ${result.travelTime} minute(s)`,
+        text: `Successfully booked ${result.allocatedRooms.length} room(s): ${result.allocatedRooms.join(', ')}. Travel time: ${result.travelTime} minute(s). Selected to minimize total travel time based on entrance proximity.`,
       });
     } else {
       setLastAllocation(null);
