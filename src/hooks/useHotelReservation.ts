@@ -10,7 +10,6 @@ import {
   processBooking,
   resetHotel,
   randomlyOccupyRooms,
-  getAvailableRooms,
   getHotelStats,
   AllocationResult,
 } from '../core';

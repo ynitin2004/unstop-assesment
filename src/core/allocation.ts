@@ -11,8 +11,8 @@
  * - Room proximity to stairs/lift (lower room numbers preferred as tiebreaker)
  */
 
-import { HOTEL_CONFIG, getRoomsCountForFloor } from './constants';
-import { extractFloor, extractPosition, createRoomNumber, sortRoomNumbers } from './roomUtils';
+import { HOTEL_CONFIG } from './constants';
+import { extractFloor, extractPosition, sortRoomNumbers } from './roomUtils';
 import { calculateGroupSpan } from './travelTime';
 
 /**
@@ -81,7 +81,7 @@ function groupRoomsByFloor(rooms: number[]): Map<number, number[]> {
   }
   
   // Sort rooms within each floor by position
-  for (const [floor, roomList] of floorMap) {
+  for (const [, roomList] of floorMap) {
     roomList.sort((a, b) => extractPosition(a) - extractPosition(b));
   }
   
