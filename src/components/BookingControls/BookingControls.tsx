@@ -3,7 +3,6 @@
  */
 
 import React, { useState } from 'react';
-import { HOTEL_CONFIG } from '../../core';
 import './BookingControls.css';
 
 interface BookingControlsProps {
