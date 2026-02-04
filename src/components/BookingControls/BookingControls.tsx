@@ -24,15 +24,12 @@ export const BookingControls: React.FC<BookingControlsProps> = ({
   const handleRoomCountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
     
-    // Clamp value to valid range
-    if (isNaN(value)) {
+    // Allow any value within range, don't clamp on every change
+    if (!isNaN(value) && value >= HOTEL_CONFIG.MIN_ROOMS_PER_BOOKING && value <= HOTEL_CONFIG.MAX_ROOMS_PER_BOOKING) {
+      setRoomCount(value);
+    } else if (e.target.value === '') {
+      // Allow empty input temporarily
       setRoomCount(HOTEL_CONFIG.MIN_ROOMS_PER_BOOKING);
-    } else {
-      const clamped = Math.max(
-        HOTEL_CONFIG.MIN_ROOMS_PER_BOOKING,
-        Math.min(HOTEL_CONFIG.MAX_ROOMS_PER_BOOKING, value)
-      );
-      setRoomCount(clamped);
     }
   };
 
