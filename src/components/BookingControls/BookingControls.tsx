@@ -22,22 +22,18 @@ export const BookingControls: React.FC<BookingControlsProps> = ({
   const [roomCount, setRoomCount] = useState<number>(1);
 
   const handleRoomCountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(e.target.value, 10);
-    
-    // Allow any value within range, don't clamp on every change
-    if (!isNaN(value) && value >= HOTEL_CONFIG.MIN_ROOMS_PER_BOOKING && value <= HOTEL_CONFIG.MAX_ROOMS_PER_BOOKING) {
-      setRoomCount(value);
-    } else if (e.target.value === '') {
-      // Allow empty input temporarily
-      setRoomCount(HOTEL_CONFIG.MIN_ROOMS_PER_BOOKING);
-    }
+    const value = Number(e.target.value);
+    setRoomCount(value);
   };
+
+  // Ensure room count is valid for booking
+  const validRoomCount = Math.max(1, Math.min(5, roomCount || 1));
 
   const handleBook = () => {
-    onBook(roomCount);
+    onBook(validRoomCount);
   };
 
-  const canBook = availableRooms >= roomCount;
+  const canBook = availableRooms >= validRoomCount;
 
   return (
     <div className="booking-controls">
@@ -48,8 +44,8 @@ export const BookingControls: React.FC<BookingControlsProps> = ({
         <input
           id="room-count"
           type="number"
-          min={HOTEL_CONFIG.MIN_ROOMS_PER_BOOKING}
-          max={HOTEL_CONFIG.MAX_ROOMS_PER_BOOKING}
+          min={1}
+          max={5}
           value={roomCount}
           onChange={handleRoomCountChange}
           className="room-input"
@@ -66,7 +62,7 @@ export const BookingControls: React.FC<BookingControlsProps> = ({
           className="btn btn-primary"
           title={canBook ? 'Book rooms' : 'Not enough rooms available'}
         >
-          Book {roomCount} Room{roomCount > 1 ? 's' : ''}
+          Book {validRoomCount} Room{validRoomCount > 1 ? 's' : ''}
         </button>
 
         <button
